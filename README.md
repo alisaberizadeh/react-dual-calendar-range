@@ -1,5 +1,7 @@
 # react-dual-calendar-range
 
+[راهنمای کامل فارسی](./README.fa.md)
+
 An accessible, headless-first Jalali (Persian) and Gregorian date range picker for React 18 and 19.
 
 یک انتخاب‌گر بازه تاریخ شمسی و میلادی برای React، با ظاهر آماده، پشتیبانی کامل RTL و API بدون استایل برای طراحی‌های اختصاصی.
