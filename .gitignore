@@ -1,0 +1,10 @@
+node_modules/
+dist/
+storybook-static/
+coverage/
+test-results/
+playwright-report/
+.DS_Store
+*.tgz
+.artifacts/
+debug-storybook.log

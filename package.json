@@ -1,0 +1,124 @@
+{
+  "name": "react-dual-calendar-range",
+  "version": "0.1.0",
+  "description": "Accessible, headless-first Jalali and Gregorian date range picker for React.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alisaberizadeh/react-dual-calendar-range.git"
+  },
+  "homepage": "https://github.com/alisaberizadeh/react-dual-calendar-range#readme",
+  "bugs": {
+    "url": "https://github.com/alisaberizadeh/react-dual-calendar-range/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/server.cjs",
+  "module": "./dist/server.js",
+  "types": "./dist/server.d.ts",
+  "style": "./dist/styles.css",
+  "exports": {
+    ".": {
+      "browser": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      },
+      "import": {
+        "types": "./dist/server.d.ts",
+        "default": "./dist/server.js"
+      },
+      "require": {
+        "types": "./dist/server.d.cts",
+        "default": "./dist/server.cjs"
+      }
+    },
+    "./headless": {
+      "import": {
+        "types": "./dist/headless.d.ts",
+        "default": "./dist/headless.js"
+      },
+      "require": {
+        "types": "./dist/headless.d.cts",
+        "default": "./dist/headless.cjs"
+      }
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "check": "pnpm typecheck && pnpm test && pnpm build",
+    "check:package": "pnpm build && publint && attw --pack . --ignore-rules no-resolution",
+    "prepublishOnly": "pnpm check"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/vazirmatn": "^5.3.0",
+    "@internationalized/date": "^3.12.4",
+    "react-aria-components": "^1.22.1"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@axe-core/playwright": "^4.11.0",
+    "@changesets/cli": "^2.29.7",
+    "@playwright/test": "^1.64.0",
+    "@storybook/addon-a11y": "^10.6.2",
+    "@storybook/addon-docs": "^10.6.2",
+    "@storybook/react-vite": "^10.6.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.0.4",
+    "axe-core": "^4.14.0",
+    "jsdom": "^27.0.1",
+    "publint": "^0.3.25",
+    "storybook": "^10.6.2",
+    "tsup": "^8.5.1",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.0",
+    "vitest": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "react",
+    "date-range-picker",
+    "jalali",
+    "persian-calendar",
+    "headless",
+    "datepicker",
+    "rtl"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "packageManager": "pnpm@11.25.0"
+}
